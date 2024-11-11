@@ -1,0 +1,123 @@
+აირჩიეთ სწორი პასუხი, თითოეული კითხვა არის 0.5 ქულიანი:
+1.	როგორი ტიპის სკანირება არ არსებობს?
+•	Ping Sweep,
+•	Nmap stealthy scan,
+•	Vulnerability scan,
+•	Nmap T12 scan 1
+
+2.	Cyber Kill Chain -ის რომელ ფაზაზე მიმდინარეობს ენუმერაცია?
+•	Exploitation,
+•	Delivery,
+•	Reconnaissance, 1
+•	Weaponization. 1
+
+3.	შესაძლებელია თუ არა ენუმერაცია განხორციელდეს Footprinting-ის გარეშე?
+•	დიახ, შესაძლებელია, 1
+•	არა, შეუძლებელია,
+•	დამოკიდებულია ადგილობრივ კანონმდებლობაზე,
+•	არც ერთი პასუხი არ არის სწორი.
+
+4.	ჩამოთვლილთაგან  სკანირების ხელსაწყო არ არის:
+•	Nmap,
+•	Snort, 
+•	Wireshark, 1
+•	Nessus.
+
+5.	როგორი ტიპის ტროიანია R.A.T?
+•	Remote Access, 1
+•	Remote Availability,
+•	Redundancy Access,
+•	Redundancy Availability.
+
+6.	ჩამოთვლილთაგან არ არსებობს:
+•	Thin WHOIS server,
+•	Thick WHOIS Server,
+•	Headless WHOIS server, 1
+•	არც ერთი პასუხი არ არის სწორი.
+7.	Maltego დაწერილია პროგრამულ ენა:
+•	Python-ზე,
+•	C++ -ზე,
+•	Java - ზე, 1
+•	GoLang-ზე.
+
+8.	Network Mapping არის:
+•	ენუმერაციის მაგალითი, 1
+•	ექსლპოტის გაშვების მაგალითი,
+•	სოციალური ინჟინერიის მაგალითი,
+•	Footprinting-ის მაგალითი.
+
+9.	ჩამოთვლილთაგან რომელი მეთოდით არის შესაძლებელი სკანირებისათვის ხელის შეშლა?
+•	Firewall Configuration with Strict Filtering rules,
+•	Rate Limiting and Throttling,
+•	Network Segmentation,
+•	ყველა პასუხი სწორია. 1
+
+10.	SMTP პროტოკოლის დანიშნულებაა:
+•	ელ-ფოსტის მიღება და მისი სერვერზე წაშლა,
+•	ელ-ფოსტის გაგზავნა, 1
+•	ელ-ფოსტის მიღება და მისი სერვერზე დატოვება,
+•	ყველა პასუხი სწორია.
+
+
+უპასუხეთ შეკითხვას, შეკითხვა არის 3 ქულიანი:
+1.	რა არის Danabot ტროიანი? აღწერეთ მისი გავრცელებისა და მოქმედების ალგორითმი.
+2.	Danabot არის დახვეწილი საბანკო ტროა, რომელიც შექმნილია მსხვერპლებისგან ფინანსური ინფორმაციის მოსაპარად. ის პირველად 2018 წელს აღმოაჩინეს და ცნობილია თავისი მოდულარული დიზაინითა და მიწოდების რთული მეთოდებით
+•	Danaboti ვრცელდება ემაილებიდან და სოფტვერში არსებული იექსპლოიტების დახმარებით
+•	Initial infection, communication with c2 servers, information gathering, the stolen data is sent back to c2 servers, 
+
+პრაქტიკული დავალება 1 (6 ქულა):
+სცენარი:
+უმცროს ეთიკურ ჰაკერს დაევალა კლიენტის ქსელის დაუცველობის შეფასება. მან გადაწყვიტა გამოეყენებინა Nmap, ქსელის სკანირების ინსტრუმენტი, ქსელში გაშვებული ღია პორტებისა და სერვისების იდენტიფიცირებისთვის. ჰაკერმა დაიწყო სტანდარტული Nmap სკანირება რათა დაესკანა ქსელი.
+
+
+Რა მოხდა:
+ჰაკერი იყენებდა აგრესიულ სკანირების რეჟიმს სიჩქარის შემცირების ან IP address spoofing -ის გარეშე, ამან სკანირება ადვილად შესამჩნევი გახადა ქსელში არსებული IPS-სისტემით.
+Stealth-ის ნაკლებობა: ისეთი ტექნიკის არგამოყენებით, როგორიცაა პაკეტების ფრაგმენტაცია ან შეცვვლილი IP მისამართების გამოყენება, თავდამსხმელმა თავისი IP მისამართი ადვილად მიკვლევადი გახადა.
+
+შედეგი:
+ქსელის IPS-მა სწრაფად აღმოაჩინა სკანირება მისი აგრესიული რეჟიმის გამო. საპასუხოდ, ქსელის უსაფრთხოებაზე პასუხისმგებელმა პირებმა მალევე დაბლოკეს ჰაკერის IP მისამართი და მან დავალება ვერ შეასრულა.
+უპასუხეთ შეკითხვას:
+•	რა შეეშალა ეთიკურ ჰაკერს? როგორ უნდა მოქცეულიყო იმისათვის, რომ ქსელური დაცვის სისტემას ის ვერ გამოეჭირა?
+•	•  Lack of Stealth: The hacker used aggressive scanning modes and did not employ techniques to avoid detection, making the scan easily noticeable by the IPS system.
+•	•  Direct Connection: Connecting directly to the main network without regard to security measures immediately raised red flags.
+•	•  Open Packet Capturing: Capturing packets with Wireshark without obfuscation is easily detectable.
+•	•  Improper Timing: Performing scans during peak hours when network traffic is high increases the likelihood of detection.
+
+
+•	დაწერეთ nmap-ის ბრძანება რომლის საშუალებითაც ქსელში სკანირება მოხდებოდა Stealth რეჟიმში.
+•	•  Use Throttling: Adjust the speed of the scan with the -T option in Nmap. Using -T2 or -T3 can make the scan less detectable.
+•	•  Packet Fragmentation: Use the -f option in Nmap to fragment packets, which can help evade detection by some IDS/IPS systems.
+•	•  Decoys: Create decoy scan attempts using the -D option. This can confuse IDS/IPS systems by making it look like multiple IP addresses are scanning the network.
+•	•  Idle Scan: Perform an idle scan with the -sI option. This technique uses another machine to send packets, masking the attacker's IP address.
+•	•  Use VPNs or Proxies: Employ VPNs or proxies to anonymize your IP address during scanning activities.
+
+
+
+პრაქტიკული დავალება 2 (6 ქულა):
+სცენარი:
+უმცროსი ეთიკური ჰაკერი, რომელსაც სურს სამიზე ქსელის მონიტორინგი და  ტრაფიკის ანალიზი, უსაფრთხოების შეფასებისთვის, იყენებს Wireshark-ს და გეგმავს Nessus-ის გამოყენებას დაუცველობის სკანირებისთვის(Vulnerability scanning) კლიენტის ქსელში.
+
+Რა მოხდა:
+ჰაკერი პირდაპირ უკავშირდება მთავარ ქსელს, ქსელის ტოპოლოგიის ან არსებული უსაფრთხოების ზომების გათვალისწინების გარეშე. მან დაიწყო პაკეტების გადაჭერა Wireshark-ით ღიად,მისი დაფარვის(obfuscation) გარეშე.
+Nessus-ის სკანირება დაიწყო ნაგულისხმევი(default) პარამეტრების გამოყენებით, სკანირებაც არა ნაკლებად აქტიურ დროს, არამედ შუადღისას დაგეგმა რადგან ჩათვალა, რომ დიდი ზომის ტრაფიკში Nessus-ის პაკეტებს ვერავინ შეამჩნევდა. თუმცა, ეს  ქცევა სწრაფად შენიშნა ქსელის უსაფრთხოების სისტემამ.
+შედეგი:
+ქსელის IPS-მა დაადგინა საეჭვო აქტივობა და ინფოსეკებმა გადაამისამართეს ჰაკერის მთელი ტრაფიკი honeypot ქსელში. ეს ქსელი რეალური ჩანდა, მაგრამ იყო იზოლირებული და ექვემდებარებოდა ინფოსეკის მიერ 24/7 მონიტორინგს. Honeypot-ში, ჰაკერების ყველა ქმედება იყო ჩაწერილი და გაანალიზებული რეალურ ქსელზე გავლენის გარეშე. Wireshark-ის პაკეტები ახლა მხოლოდ ხელოვნურად დაგენერირებულ მონაცემებს შეიცავდა honeypot-იდან.
+
+უპასუხეთ შეკითხვას:
+•	რა შეეშალა ეთიკურ ჰაკერს? როგორ უნდა მოქცეულიყო იმისათვის, რომ ქსელური დაცვის სისტემას ის ვერ გამოეჭირა? 
+•	•  Stealth and Anonymity: Use obfuscation techniques to hide your activities.
+•	•  Network Reconnaissance: Thoroughly understand the network layout and identify less monitored entry points.
+•	•  Timed Scans: Schedule scans during times of minimal network activity to avoid detection.
+•	•  Segmented Testing: Perform tests in smaller segments to minimize footprint and reduce detection risk.
+•	•  Collaboration: Work closely with the IT and security teams to ensure that tests are realistic yet controlled to prevent disruption.
+
+
+•	Honeypot, როგორც თქვენთვის ცნობილია, წარმოადგენს სატყუარას და ამ შემთხვევაში ის ყალბი ქსელი, იგივე Fakenet-ი იყო. რა შეიძლება გააკეთოს ჰაკერმა იმისათვის, რომ მიხვდეს რეალურ ქსელშია თუ არა?
+•	•  Behavioral Analysis: Monitor the behavior of the network. Honeypots often have minimal legitimate traffic and may have patterns that seem artificial.
+•	•  Network Fingerprinting: Analyze network fingerprints. Real networks usually have a mix of old and new devices, varying operating systems, and different levels of patching. Honeypots might have uniform configurations.
+•	•  Service Interaction: Interact with network services. Honeypots often have limited functionality and may not respond in the same way as real services. Look for inconsistencies in responses.
+•	•  DNS Analysis: Examine DNS records and responses. Fake networks might have discrepancies or simplified DNS structures compared to real networks.
+•	•  Latency Checks: Measure network latency. Honeypots might have unusual latency patterns, either too fast or too slow, indicating they're not part of a typical network infrastructure.
+•	•  File System Examination: Look at file system details and metadata. Honeypots may have less data or more generic file structures.
+•	•  User Activity: Check for user activity. Real networks usually have a variety of users accessing different resources. Honeypots might lack this diversity.
+•	•  Network Traffic Patterns: Analyze traffic patterns. Honeypots may generate traffic that looks normal at first glance but lacks the complexity of genuine network traffic.
