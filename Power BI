@@ -1,0 +1,65 @@
+Customer_Age = DATEDIFF( 'Customer'[BirthDate], TODAY(), YEAR )
+
+DelayedOrders = IF(DATEDIFF('Sales'[OrderDate], 'Sales'[ShipDate], DAY) > 5, "Late", "OnTime")
+
+DateTable = CALENDAR(MIN('Financial Data'[Date]), MAX('Financial Data'[Date]))
+
+Sales for Paseo = CALCULATE(SUM('Financial Data'[ Sales]),  financials[Product] = 3)
+
+Sales Previous Month = CALCULATE( SUM('Sales_2020_2024'[Sales in GEL]), DATEADD('Calendar'[Date], -1, MONTH))
+
+MoM Growth Rate = 
+DIVIDE(
+    (SUM('Sales_2020_2024'[Sales in GEL]) - [Sales Previous Month]),
+    [Sales Previous Month]
+)
+Percentage Profit by Product = 
+DIVIDE(
+    [Total Profit],
+    [Total Profit All Products],
+    0
+)
+
+Total Profit All Products = CALCULATE(
+    SUM('Sales_2020_2024'[Profit]),
+    ALL('Sales_2020_2024')
+)
+
+CountryProfitPercentage = DIVIDE(SUM(Sales[Profit]), CALCULATE(SUM(Sales[Profit]), ALL(Sales[Country])), 0) * 100
+
+ProfitChange2Months = 
+   VAR CurrentProfit = SUM(Sales[Profit])
+   VAR PreviousProfit = CALCULATE(SUM(Sales[Profit]), DATEADD(Sales[Date], -2, MONTH))
+   RETURN CurrentProfit – PreviousProfit
+
+EmailLengthGreaterThan12 = 
+   COUNTROWS (
+      FILTER (
+         Sales,
+         LEN(Sales[EmailAddress]) > 12
+      )
+   )
+UnitPriceDiscount_Perc = 
+    IFERROR (
+        DIVIDE(
+            Sales[UnitPriceDiscount], 
+            Sales[UnitPrice],
+            0.001
+        ),
+        0.001
+    )
+
+Cost_Check = 
+    IF(
+        (Sales[OrderQuantity] * Sales[UnitPrice] > Sales[SalesAmount]) &&
+        (Sales[ProductStandardCost] > Sales[TotalProductCost]),
+        TRUE(),
+        FALSE()
+    )
+
+Check = 
+    IF (
+        Sales[SalesAmount_Check] <> Sales[SalesAmount],
+        "Error",
+        "Ok"
+    )
