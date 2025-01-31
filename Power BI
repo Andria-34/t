@@ -8,58 +8,21 @@ Sales for Paseo = CALCULATE(SUM('Financial Data'[ Sales]),  financials[Product] 
 
 Sales Previous Month = CALCULATE( SUM('Sales_2020_2024'[Sales in GEL]), DATEADD('Calendar'[Date], -1, MONTH))
 
-MoM Growth Rate = 
-DIVIDE(
-    (SUM('Sales_2020_2024'[Sales in GEL]) - [Sales Previous Month]),
-    [Sales Previous Month]
-)
-Percentage Profit by Product = 
-DIVIDE(
-    [Total Profit],
-    [Total Profit All Products],
-    0
-)
+=DSUM(A1:L200,K1,R1:T3)
 
-Total Profit All Products = CALCULATE(
-    SUM('Sales_2020_2024'[Profit]),
-    ALL('Sales_2020_2024')
-)
+=DGET(A1:L200,G1,Q1:T2)
 
-CountryProfitPercentage = DIVIDE(SUM(Sales[Profit]), CALCULATE(SUM(Sales[Profit]), ALL(Sales[Country])), 0) * 100
+IFS(E2=$I$1,VLOOKUP(D2,$I$2:$J$5,2,0),E2=$M$1,VLOOKUP(D2,$M$2:$N$5,2,0),E2=$I$9,VLOOKUP(D2,$I$10:$J$13,2,0),TRUE,VLOOKUP(D2,$M$10:$N$13,2,0))*B2-C2
 
-ProfitChange2Months = 
-   VAR CurrentProfit = SUM(Sales[Profit])
-   VAR PreviousProfit = CALCULATE(SUM(Sales[Profit]), DATEADD(Sales[Date], -2, MONTH))
-   RETURN CurrentProfit – PreviousProfit
+=IFNA(VLOOKUP(D5,$I$1:$J$5,2,1),$J$5)
 
-EmailLengthGreaterThan12 = 
-   COUNTROWS (
-      FILTER (
-         Sales,
-         LEN(Sales[EmailAddress]) > 12
-      )
-   )
-UnitPriceDiscount_Perc = 
-    IFERROR (
-        DIVIDE(
-            Sales[UnitPriceDiscount], 
-            Sales[UnitPrice],
-            0.001
-        ),
-        0.001
-    )
+=INDEX(C6:F9,C12,C14)
 
-Cost_Check = 
-    IF(
-        (Sales[OrderQuantity] * Sales[UnitPrice] > Sales[SalesAmount]) &&
-        (Sales[ProductStandardCost] > Sales[TotalProductCost]),
-        TRUE(),
-        FALSE()
-    )
+=MATCH(B12,B6:B9,0)
 
-Check = 
-    IF (
-        Sales[SalesAmount_Check] <> Sales[SalesAmount],
-        "Error",
-        "Ok"
-    )
+=UNIQUE(B3:L3,TRUE,FALSE)
+
+=SORT(A2:K200,6,1,)
+
+=FILTER(A2:K200,F2:F200="psp")
+
